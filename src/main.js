@@ -1,6 +1,8 @@
 import React from "react";
 import "./main.css";
+import { Navigate, useNavigate } from "react-router-dom";
 export default function Main() {
+  let navigate = useNavigate();
   return (
     <>
       <h2
@@ -37,7 +39,7 @@ export default function Main() {
               <div className="cont">
                 <button
                   className="btn btn-primary"
-                  onClick={() => (window.location.href = "/Client_Car/Login")}
+                  onClick={() => navigate("/Client_Car/Login", { state: {} })}
                 >
                   User's Login
                 </button>
