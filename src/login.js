@@ -46,7 +46,7 @@ function Login() {
           setIsSubmitted(true);
           setLoginType(user.type);
           localStorage.setItem("userType", user.type);
-          window.location.href = "/dash";
+          window.location.href = "/Client_Car/dash";
         }
       } else {
         setErrorMessages({ name: "uname", message: errors.uname });
@@ -68,7 +68,7 @@ function Login() {
           outline: "2px solid white",
         }}
         className="btn btn-dark"
-        onClick={() => (window.location.href = "/")}
+        onClick={() => (window.location.href = "/Client_Car/")}
       >
         Home Page
       </button>
@@ -131,7 +131,7 @@ function Login() {
               Don't have Account?{"   "}
               <span
                 onClick={() => {
-                  window.location.href = "/signup";
+                  window.location.href = "/Client_Car/signup";
                 }}
                 style={{
                   color: "#4d4dff",
@@ -152,7 +152,7 @@ function Login() {
   return (
     <>
       {localStorage.getItem("userType") == "user" ? (
-        (window.location.href = "/dash")
+        (window.location.href = "/Client_Car/dash")
       ) : (
         <div className="app">{renderForm}</div>
       )}

@@ -62,7 +62,7 @@ export default function NavbarOwner() {
                   <a
                     className="nav-link active"
                     aria-current="page"
-                    href="/OwnerDash"
+                    href="/Client_Car/OwnerDash"
                   >
                     Available Cars
                   </a>
@@ -71,7 +71,7 @@ export default function NavbarOwner() {
                   <a
                     className="nav-link active"
                     aria-current="page"
-                    href="/ViewStatusOwner"
+                    href="/Client_Car/ViewStatusOwner"
                   >
                     View Status
                   </a>
@@ -80,7 +80,7 @@ export default function NavbarOwner() {
                   <a
                     className="nav-link active"
                     aria-current="page"
-                    href="/ViewHistory"
+                    href="/Client_Car/ViewHistory"
                   >
                     View History
                   </a>
@@ -93,7 +93,7 @@ export default function NavbarOwner() {
                 <li className="nav-item">
                   <a
                     onClick={() => {
-                      window.location.href = "/LoginOwner";
+                      window.location.href = "/Client_Car/LoginOwner";
                       localStorage.clear();
                     }}
                     className="nav-link active"

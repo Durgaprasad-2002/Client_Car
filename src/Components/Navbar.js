@@ -6,7 +6,7 @@ import Popper from "popper.js";
 
 export default function Navbar() {
   const Logout = () => {
-    window.location.href = "/Login";
+    window.location.href = "/Client_Car/Login";
     localStorage.clear();
   };
 
@@ -67,7 +67,7 @@ export default function Navbar() {
                   <a
                     className="nav-link active"
                     aria-current="page"
-                    href="/dash"
+                    href="/Client_Car/dash"
                   >
                     Available Cars
                   </a>
@@ -76,7 +76,7 @@ export default function Navbar() {
                   <a
                     className="nav-link active"
                     aria-current="page"
-                    href="/status"
+                    href="/Client_Car/status"
                   >
                     View Status
                   </a>
@@ -85,7 +85,7 @@ export default function Navbar() {
                   <a
                     className="nav-link active"
                     aria-current="page"
-                    href="/modify"
+                    href="/Client_Car/modify"
                   >
                     Rental Modification
                   </a>
@@ -94,7 +94,7 @@ export default function Navbar() {
                   <a
                     className="nav-link active"
                     aria-current="page"
-                    href="/feedback"
+                    href="/Client_Car/feedback"
                   >
                     Feedback
                   </a>

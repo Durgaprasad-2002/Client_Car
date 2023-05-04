@@ -37,7 +37,7 @@ export default function Main() {
               <div className="cont">
                 <button
                   className="btn btn-primary"
-                  onClick={() => (window.location.href = "/Login")}
+                  onClick={() => (window.location.href = "/Client_Car/Login")}
                 >
                   User's Login
                 </button>
@@ -60,7 +60,9 @@ export default function Main() {
               <div className="cont">
                 <button
                   className="btn btn-primary"
-                  onClick={() => (window.location.href = "/LoginOwner")}
+                  onClick={() =>
+                    (window.location.href = "/Client_Car/LoginOwner")
+                  }
                 >
                   Owner's Login
                 </button>
