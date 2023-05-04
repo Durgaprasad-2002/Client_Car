@@ -92,8 +92,10 @@ export default function NavbarOwner() {
                 </li>
                 <li className="nav-item">
                   <a
+                    href="/Client_Car/LoginOwner"
                     onClick={() => {
-                      window.location.href = "/Client_Car/LoginOwner";
+                      // window.location.href = "/Client_Car/LoginOwner";
+
                       localStorage.clear();
                     }}
                     className="nav-link active"

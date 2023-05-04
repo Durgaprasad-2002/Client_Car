@@ -6,7 +6,10 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import { FaUser, FaLock, FaMailBulk } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+
 function Login() {
+  let navigate = useNavigate();
+
   let [database, setdatabse] = useState([]);
   const getUser = async () => {
     const response = await fetch(
@@ -38,6 +41,7 @@ function Login() {
 
     var { uname, pass } = document.forms[0];
 
+    if (database.length == 0) getUser();
     const userData = database.filter((user) => {
       if (user.user === uname.value && user.type == "user") {
         if (user.password != pass.value) {
@@ -46,7 +50,8 @@ function Login() {
           setIsSubmitted(true);
           setLoginType(user.type);
           localStorage.setItem("userType", user.type);
-          window.location.href = "/Client_Car/dash";
+          // window.location.href = "/Client_Car/dash";
+          navigate("/dash", { state: {} });
         }
       } else {
         setErrorMessages({ name: "uname", message: errors.uname });
@@ -68,7 +73,8 @@ function Login() {
           outline: "2px solid white",
         }}
         className="btn btn-dark"
-        onClick={() => (window.location.href = "/Client_Car/")}
+        href="/Client_Car"
+        onClick={() => navigate("/", { state: {} })}
       >
         Home Page
       </button>
@@ -131,7 +137,8 @@ function Login() {
               Don't have Account?{"   "}
               <span
                 onClick={() => {
-                  window.location.href = "/Client_Car/signup";
+                  // window.location.href = "/Client_Car/signup";
+                  navigate("/signup", { state: {} });
                 }}
                 style={{
                   color: "#4d4dff",
@@ -152,7 +159,8 @@ function Login() {
   return (
     <>
       {localStorage.getItem("userType") == "user" ? (
-        (window.location.href = "/Client_Car/dash")
+        // (window.location.href = "/Client_Car/dash")
+        navigate("/dash", { state: {} })
       ) : (
         <div className="app">{renderForm}</div>
       )}

@@ -4,9 +4,12 @@ import "./login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { FaUser, FaLock, FaMailBulk } from "react-icons/fa";
+import { Navigate, useNavigate } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 function LoginOwner() {
+  let navigate = useNavigate();
+
   let [database, setdatabse] = useState([]);
   const getUser = async () => {
     const response = await fetch(
@@ -50,7 +53,8 @@ function LoginOwner() {
           setIsSubmitted(true);
           setLoginType(user.type);
           localStorage.setItem("userType", user.type);
-          window.location.href = "/Client_Car/LoginOwner";
+          // window.location.href = "/Client_Car/LoginOwner";
+          navigate("/LoginOwner", { state: {} });
         }
       } else {
         setErrorMessages({ name: "uname", message: errors.uname });
@@ -71,8 +75,9 @@ function LoginOwner() {
           margin: "-50px 5px 0px 0px ",
           outline: "2px solid white",
         }}
+        href="/Client_Car"
         className="btn btn-dark"
-        onClick={() => (window.location.href = "/Client_Car/")}
+        onClick={() => navigate("/", { state: {} })}
       >
         Home Page
       </button>
@@ -140,7 +145,8 @@ function LoginOwner() {
               Don't have Account?{"   "}
               <span
                 onClick={() => {
-                  window.location.href = "/Client_Car/SignUpOwner";
+                  // window.location.href = "/Client_Car/SignUpOwner";
+                  navigate("/SignUpOwner", { state: {} });
                 }}
                 style={{
                   color: "#4d4dff",
@@ -161,7 +167,8 @@ function LoginOwner() {
   return (
     <>
       {localStorage.getItem("userType") == "owner" ? (
-        (window.location.href = "/Client_Car/OwnerDash")
+        // (window.location.href = "/Client_Car/OwnerDash")
+        navigate("/OwnerDash", { state: {} })
       ) : (
         <div className="app">{renderForm}</div>
       )}

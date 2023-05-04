@@ -24,30 +24,20 @@ export default function AppLog() {
           <Routes>
             <Route path="/" element={<Main />} />
 
-            <Route path="/Client_Car/Login" element={<Login />} />
-            <Route path="/Client_Car/signup" element={<Signup />} />
-            <Route path="/Client_Car/dash" element={<UserDashboard />} />
-            <Route path="/Client_Car/single" element={<SingleCar />} />
-            <Route path="/Client_Car/status" element={<CarStatus />} />
-            <Route path="/Client_Car/modify" element={<ModifyStatus />} />
-            <Route path="/Client_Car/feedback" element={<Feedback />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/dash" element={<UserDashboard />} />
+            <Route path="/single" element={<SingleCar />} />
+            <Route path="/status" element={<CarStatus />} />
+            <Route path="/modify" element={<ModifyStatus />} />
+            <Route path="/feedback" element={<Feedback />} />
 
-            <Route
-              path="/Client_Car/LoginOwner"
-              index
-              element={<LoginOwner />}
-            />
-            <Route path="/Client_Car/SignUpOwner" element={<SignupOwner />} />
-            <Route path="/Client_Car/OwnerDash" element={<OwnerDashBoard />} />
-            <Route path="/Client_Car/SingleOwner" element={<SingleOwner />} />
-            <Route
-              path="/Client_Car/ViewStatusOwner"
-              element={<ViewStatusOwner />}
-            />
-            <Route
-              path="/Client_Car/ViewHistory"
-              element={<ViewHistoryOwner />}
-            />
+            <Route path="/LoginOwner" index element={<LoginOwner />} />
+            <Route path="/SignUpOwner" element={<SignupOwner />} />
+            <Route path="/OwnerDash" element={<OwnerDashBoard />} />
+            <Route path="/SingleOwner" element={<SingleOwner />} />
+            <Route path="/ViewStatusOwner" element={<ViewStatusOwner />} />
+            <Route path="/ViewHistory" element={<ViewHistoryOwner />} />
           </Routes>
         </BrowserRouter>
       </div>

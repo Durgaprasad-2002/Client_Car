@@ -25,7 +25,7 @@ export default function Signup() {
     axios.post("https://clean-flip-flops-moth.cyclic.app/postlogcred", {
       cred,
     });
-    navigate("/Client_Car/Login", {});
+    navigate("/Login", {});
   };
 
   return (
