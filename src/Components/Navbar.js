@@ -67,7 +67,7 @@ export default function Navbar() {
                   <a
                     className="nav-link active"
                     aria-current="page"
-                    href="/dash"
+                    href="/Client_Car/dash"
                   >
                     Available Cars
                   </a>
