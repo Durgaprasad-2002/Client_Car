@@ -39,7 +39,7 @@ export default function Main() {
               <div className="cont">
                 <button
                   className="btn btn-primary"
-                  onClick={() => navigate("/Client_Car/Login", { state: {} })}
+                  onClick={() => navigate("/Login", { state: {} })}
                 >
                   User's Login
                 </button>
