@@ -20,7 +20,7 @@ export default function AppLog() {
   return (
     <>
       <div style={{ marginTop: "60px" }}>
-        <BrowserRouter basename={""}>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route path="/" element={<Main />} />
 
