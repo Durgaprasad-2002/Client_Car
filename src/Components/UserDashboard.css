@@ -1,0 +1,46 @@
+.AvailableCars {
+  scroll-behavior: smooth;
+  padding-top: 70px;
+  background-color: slategray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.image {
+  width: 300px;
+  height: auto;
+  object-fit: fill;
+  vertical-align: middle;
+  margin: 10px;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.carInfo {
+  margin: 10px;
+}
+.carPricing {
+  margin-top: -115px;
+  width: auto;
+  height: auto;
+  background-color: #b8d2e4;
+  box-shadow: 0 4px 9px -4px rgba(0, 0, 0, 3);
+}
+.carPricing article {
+  padding: 120px 10px 10px 10px;
+}
+.carPricing article h5 {
+  font-weight: 700;
+  font-size: 18px;
+}
+.carPricing article h6 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  font-weight: 380;
+}
+.carPricing article h6 button {
+  margin-inline-start: auto;
+}

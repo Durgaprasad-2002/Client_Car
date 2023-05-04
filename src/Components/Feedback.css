@@ -1,0 +1,96 @@
+.feedback .card {
+  margin-top: 80px;
+  width: 350px;
+  border: none;
+  box-shadow: 0px 3px 6px 0px black;
+  border-radius: 12px;
+}
+
+.feedback .circle-image img {
+  border: 6px solid #fff;
+  border-radius: 100%;
+  padding: 0px;
+  top: -28px;
+  position: relative;
+  width: 180px;
+  height: 130px;
+  border-radius: 100%;
+  z-index: 1;
+  background: #e7d184;
+  cursor: pointer;
+}
+
+.feedback .name {
+  margin-top: -21px;
+  font-size: 18px;
+}
+
+.feedback .fw-500 {
+  font-weight: 500 !important;
+}
+
+.feedback .start {
+  color: green;
+}
+
+.feedback .stop {
+  color: red;
+}
+
+.feedback .rate {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.feedback .rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.feedback .rating > input {
+  display: none;
+}
+
+.feedback .rating > label {
+  position: relative;
+  width: 1em;
+  font-size: 30px;
+  font-weight: 300;
+  color: #ffd600;
+  cursor: pointer;
+}
+
+.feedback .rating > label::before {
+  content: "\2605";
+  position: absolute;
+  opacity: 0;
+}
+
+.feedback .rating > label:hover:before,
+.feedback .rating > label:hover ~ label:before {
+  opacity: 1 !important;
+}
+
+.feedback .rating > input:checked ~ label:before {
+  opacity: 1;
+}
+
+.feedback .rating:hover > input:checked ~ label:before {
+  opacity: 0.4;
+}
+
+.feedback .buttons {
+  top: 2px;
+  position: relative;
+}
+
+.feedback .rating-submit {
+  border-radius: 15px;
+  color: #fff;
+  height: 49px;
+}
+
+.feedback .rating-submit:hover {
+  color: #fff;
+}
