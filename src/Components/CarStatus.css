@@ -3,19 +3,147 @@ tr,
 td {
   padding: 4px;
   font-weight: 450;
-  font-family: monospace;
+  font-family: serif;
   text-align: left;
-  border: 1px solid rgb(237, 231, 231);
+  color: black;
+}
+td:first-child {
+  font-weight: 600;
+}
+td:nth-child(odd) {
+  border: 1px solid gray;
+}
+
+.card {
+  border: none;
+}
+.detail .card-title {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 520;
+  text-align: left;
+
+  text-decoration: underline solid rgb(1, 12, 12);
+  margin-bottom: 10px;
 }
 .cen {
   text-align: center;
 }
 
+.info {
+  margin: 20px 0px 3px 0px;
+  height: fit-content;
+  width: 240px;
+  max-width: 280px;
+  text-align: left;
+  min-width: 200px;
+  font-family: serif;
+  /* background-color: aqua; */
+}
 .con {
   margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  height: fit-content;
+}
+
+.inncard {
+  width: 85%;
+  padding: 10px;
+  height: fit-content;
+  background-color: rgb(249, 245, 245);
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgb(61, 61, 61);
+}
+.card-img-top {
+  border: 2px solid darkgray;
+  border-radius: 5px;
+  height: 170px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  margin: 3px 3px 0px 3px;
+}
+.detail {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btns {
+  height: 40px;
+  border-radius: 5px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  transform: translateY(-2px);
+}
+
+.bt {
+  background-color: none;
+  width: fit-content;
+  font-size: 14px;
+  color: rgb(49, 49, 233);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 6px;
+  margin-top: 3px;
+  margin-right: 6px;
+  border: 1.5px solid rgb(49, 49, 233);
+  transition: all ease-in 0.5s;
+}
+.bt:hover {
+  background-color: rgb(49, 49, 233);
+  color: white;
+}
+.NoBookings {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 400px;
+}
+.No-title {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.No-Deatail {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  font-size: medium;
+  text-align: center;
+}
+
+.A-btn {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+  background: lightblue;
+  padding: 0px 5px 0px 5px;
+  font-weight: 400;
+  border-radius: 2px;
+  outline: 2px solid lightblue;
+  outline-offset: 2px;
+  margin-left: 5px;
+  transition: all 0.3s;
+  font-style: oblique;
+}
+
+.A-btn:hover {
+  color: rgb(88, 88, 243);
+  outline-color: rgb(88, 88, 243);
 }

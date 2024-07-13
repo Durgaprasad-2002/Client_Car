@@ -1,101 +1,88 @@
-.body {
-  padding: 20px;
-}
-
-.modify {
+.Form-box {
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 90px;
 }
 
-.modify .form-box {
-  min-width: 300px;
-  width: fit-content;
-  background: #f1f7fe;
-  overflow: hidden;
-  border-radius: 16px;
-  color: #010101;
+.BX {
+  width: 520px;
+  background-color: rgb(230, 242, 247);
+  box-shadow: 2px 2px 20px rgb(86, 85, 85);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 5px 5px 10px;
+}
+.MainForm {
+  background-color: rgb(230, 242, 247);
+  padding: 5px;
 }
 
-.modify .form {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 32px 24px 24px;
-  gap: 16px;
-  width: 500px;
-  text-align: center;
-}
-
-/*Form text*/
-.modify .title {
-  font-weight: bold;
-  font-size: 1.6rem;
-}
-
-.modify .subtitle {
-  font-size: 1rem;
-  color: #666;
-}
-
-/*Inputs box*/
-.modify .form-container {
-  overflow: hidden;
-  border-radius: 8px;
-  background-color: #fff;
-  margin: 1rem 0 0.5rem;
+.ContentIN,
+.TitleIn {
+  border: none;
+  outline: none;
   width: 100%;
-}
-
-.modify .input {
-  background: none;
-  border: 0;
-  outline: 0;
-  height: 40px;
-  width: 100%;
-  border-bottom: 1px solid #eee;
-  font-size: 0.9rem;
-  font-weight: 300;
-  padding: 8px 15px;
-}
-
-.modify .pl {
-  font-style: oblique;
-  font-weight: 700;
-}
-.modify .form-section {
-  padding: 16px;
-  font-size: 0.85rem;
-  background-color: #e0ecfb;
-  box-shadow: rgb(0 0 0 / 8%) 0 -1px;
-}
-
-.modify .form-section a {
-  font-weight: bold;
-  color: #0066ff;
-  transition: color 0.3s ease;
-}
-
-.modify .form-section a:hover {
-  color: #005ce6;
-  text-decoration: underline;
-}
-
-/*Button*/
-.modify .form button {
-  background-color: #0066ff;
-  color: #fff;
-  border: 0;
-  border-radius: 24px;
-  padding: 10px 16px;
-  font-size: 1rem;
+  max-width: 500px;
+  min-width: 100px;
+  border-bottom: 1px solid rgb(143, 140, 140);
+  height: 30px;
+  padding: 15px 20px 15px 20px;
+  background-color: white;
   font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 120px;
+  font-style: italic;
+  caret: 5px solid black;
 }
 
-.modify .form button:hover {
-  background-color: #005ce6;
+.TitleIn {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.ContentIN {
+  font-size: medium;
+  font-weight: 390;
+  font-style: normal;
+  color: black;
+  caret-color: slateblue;
+}
+
+.loadbtn {
+  background-color: lightblue;
+  border: none;
+  color: black;
+  border-radius: 5px;
+  min-width: 100px;
+  min-height: 40px;
+  transition: all 0.5s;
+}
+.loadbtn:hover {
+  background-color: slateblue;
+  /* box-shadow: 2px 2px 10px black; */
+  color: white;
+}
+#sp1 {
+  display: block;
+}
+#sp2 {
+  display: none;
+  border: 3px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 10px;
+  height: 10px;
+  padding: 5px;
+  background-color: aliceblue;
+  animation: all 1s infinite ease-in-out;
+  animation-name: load;
+}
+
+@keyframes load {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }

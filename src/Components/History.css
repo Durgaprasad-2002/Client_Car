@@ -1,0 +1,63 @@
+.hisContainer {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.MainHisCard {
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  width: auto;
+  height: fit-content;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.HisCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.Hisimg {
+  height: fit-content;
+  max-height: 500px;
+  width: 90%;
+  max-width: 400px;
+  min-width: 120px;
+  border: 2px solid darkgray;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+.CarTitle {
+  font-weight: 800;
+  text-decoration: underline 1px darkgray;
+  text-underline-offset: 2px;
+}
+.HisCarinfo {
+  text-transform: capitalize;
+  padding: 10px;
+  width: fit-content;
+  margin: 10px;
+  font-size: 19px;
+  font-weight: 320;
+}
+
+.HisCarinfo b {
+  font-weight: 420;
+}
+
+.td {
+  text-align: left;
+  padding: 10px;
+  border: none;
+}
+.td:nth-child(odd) {
+  border: none;
+}

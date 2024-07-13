@@ -1,24 +1,27 @@
 .Contents {
   width: 100%;
-  height: auto;
+  height: fit-content;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+  transition: all 0.5s linear;
 }
 
 .conCard .card {
-  margin: 20px;
+  margin: 25px;
   width: 190px;
   height: 254px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
+  box-shadow: 0px 4px 9px -4px black;
   background: #fff;
   display: flex;
-  border-radius: 20px;
+  border-radius: 10px;
   justify-content: center;
   position: relative;
-  transition: all 0.4s;
+}
+.conCard .card h5 {
+  display: none;
 }
 
 .conCard .card::before {
@@ -30,31 +33,73 @@
   font-size: 0.8em;
   font-weight: 700;
   display: none;
+  transition: all 0.5s ease;
 }
 
 .cont {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  display: none;
+  display: block;
   justify-content: center;
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+.cont .btn {
+  transform: translateY(60px);
+  transition: all 0.3s linear;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .conCard .card .div {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: 1px solid slategray;
   cursor: pointer;
   z-index: 10;
   transition: all 0.4s;
   background-color: #fff;
+  transition: all 0.5s ease;
 }
 
 .conCard .card:hover .div {
-  transform: translateY(-30px);
+  border-radius: 10px;
+  transform: scale(0.9);
+  border: none;
+  box-shadow: 0px 4px 9px -4px black;
 }
 
-.conCard .card:hover .cont {
-  display: block;
+.conCard .card:hover .cont .btn {
+  transform: translateY(0px);
 }
+
+/* .c1 {
+}
+
+.CardFlip {
+  background-color: #fff;
+  height: 200px;
+  width: 150px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(0deg) translateY(75px);
+
+  transition: all 0.5s linear;
+}
+.CardFlip2 {
+  background-color: #fff;
+  height: 200px;
+  width: 150px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg) translateY(-85px);
+  transition: all 0.5s linear;
+}
+
+.c1:hover .CardFlip {
+  transform: rotateY(180deg) translateY(75px);
+}
+.c1:hover .CardFlip2 {
+  transform: rotateY(0deg) translateY(-85px);
+} */

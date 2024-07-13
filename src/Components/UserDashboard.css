@@ -1,6 +1,5 @@
 .AvailableCars {
   scroll-behavior: smooth;
-  padding-top: 70px;
   background-color: slategray;
   display: flex;
   flex-wrap: wrap;
@@ -8,31 +7,49 @@
   align-items: center;
 }
 .image {
-  width: 300px;
-  height: auto;
-  object-fit: fill;
-  vertical-align: middle;
+  z-index: 1;
+  width: 290px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
   margin: 10px;
   max-width: 300px;
   max-height: 300px;
+  transform: translateY(43px);
+  transition: all 0.4s;
+  transform-style: preserve-3d;
+  /* border-top-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+  border-bottom-left-radius: 13px; */
+  border-radius: 13px;
+  border: 2px solid #b8d2e4;
+}
+.carInfo:hover .image {
+  transform: translateY(0px);
 }
 
 .carInfo {
+  width: 300px;
   margin: 10px;
 }
 .carPricing {
-  margin-top: -115px;
+  margin-top: -125px;
   width: auto;
   height: auto;
   background-color: #b8d2e4;
   box-shadow: 0 4px 9px -4px rgba(0, 0, 0, 3);
+  /* border-top-left-radius: 13px;
+  border-bottom-right-radius: 13px; */
+  border-radius: 13px;
 }
 .carPricing article {
   padding: 120px 10px 10px 10px;
 }
 .carPricing article h5 {
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 600;
+  line-height: 29px;
+  font-size: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .carPricing article h6 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -44,3 +61,12 @@
 .carPricing article h6 button {
   margin-inline-start: auto;
 }
+
+.styler {
+  border-width: 2px;
+  margin: 20px 5px 20px 5px;
+  border-style: solid;
+  border-color: black;
+}
+
+/*-------------------footer--------------------- */

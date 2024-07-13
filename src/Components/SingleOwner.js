@@ -8,9 +8,38 @@ import "@fontsource/roboto/700.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import NavbarOwner from "./NavbarOwner";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
 export default function SingleOwner() {
+  let [col, setcol] = useState("black");
+
   const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.state.car_status.trim() == "Available") {
+      setcol("green");
+    } else if (location.state.car_status.trim() === "Booked") {
+      setcol("red");
+    }
+  }, [location]);
+
+  const Del = (e) => {
+    axios
+      .delete(`https://bbt-server-1lhz.onrender.com/deletecar/${e}`, {})
+      .then(() => {
+        alert("Successfully deleted");
+        navigate("/OwnerDash", { state: e });
+      })
+      .catch((err) => {
+        alert("Trying Again Cause Server is Busy");
+      });
+  };
+
+  const Modify = (e) => {
+    navigate("/carDataChange", { state: e });
+  };
 
   let Loading = <Loadings />;
   let MainCon = (
@@ -37,21 +66,62 @@ export default function SingleOwner() {
                           {location.state.car_name}
                         </h3>
                         <hr />
+                        {/* className="text-body-secondary"
+className="text-body-secondary"
+className="text-body-secondary"
+className="text-body-secondary"
+className="text-body-secondary"
+className="text-body-secondary" */}
                         <p className="card-text">
-                          <small className="text-body-secondary">
+                          <small>
                             {location.state.car_rent} Rent Per hour /-
                           </small>
                           <br />
-                          <small className="text-body-secondary">
-                            Fuel Type : {location.state.car_fuel}
-                          </small>
+                          <small>Fuel Type : {location.state.car_fuel}</small>
                           <br />
-                          <small className="text-body-secondary">
+                          <small>
                             Max Persons : {location.state.car_seating}
                           </small>
                           <br />
-                          <small className="text-body-secondary">
+                          <small>
                             License Number : {location.state.car_number}
+                          </small>
+                          <br />
+                          <small>
+                            Status :{" "}
+                            <span
+                              style={{
+                                background: "none",
+                                color: `${col}`,
+                                fontWeight: "bold",
+                              }}
+                            >
+                              {location.state.car_status}
+                            </span>
+                          </small>
+                          <br />
+                          <br />
+                          <small>
+                            <button
+                              type="button"
+                              className="btn btn-outline-primary btn-outline-1"
+                              onClick={() => Modify(location.state)}
+                            >
+                              Change Details
+                            </button>
+                            <button
+                              type="button"
+                              className="btn btn-outline-primary btn-outline-1"
+                              onClick={() =>
+                                Del(
+                                  location?.state?._id ||
+                                    location?.state?.carData?._id
+                                )
+                              }
+                              style={{ marginLeft: "10px" }}
+                            >
+                              Delete
+                            </button>
                           </small>
                           <br />
                         </p>

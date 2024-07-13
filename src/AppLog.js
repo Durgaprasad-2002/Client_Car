@@ -14,8 +14,11 @@ import ViewStatusOwner from "./Components/ViewStatusOwner";
 import ViewHistoryOwner from "./Components/ViewHistoryOwner";
 import LoginOwner from "./LoginOwner";
 import SignupOwner from "./SignUpOwner";
+import AddingCarData from "./Components/AddingCarData";
 import Main from "./main";
+import NewCar from "./Components/NewCar";
 import Loadings from "./Components/Loadings";
+
 export default function AppLog() {
   return (
     <>
@@ -38,6 +41,8 @@ export default function AppLog() {
             <Route path="/SingleOwner" element={<SingleOwner />} />
             <Route path="/ViewStatusOwner" element={<ViewStatusOwner />} />
             <Route path="/ViewHistory" element={<ViewHistoryOwner />} />
+            <Route path="/carDataChange" element={<AddingCarData />} />
+            <Route path="/newcar" element={<NewCar />} />
           </Routes>
         </BrowserRouter>
       </div>

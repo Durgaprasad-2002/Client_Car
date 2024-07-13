@@ -1,26 +1,44 @@
 import React from "react";
 import "./main.css";
+import Footer from "./Components/Footer";
 import { Navigate, useNavigate } from "react-router-dom";
+
+import {
+  BsLinkedin,
+  BsGithub,
+  BsFacebook,
+  BsTwitter,
+  BsWhatsapp,
+  BsMailbox,
+  BsMailbox2,
+  BsPinMapFill,
+  BsFile,
+} from "react-icons/bs";
+
 export default function Main() {
   let navigate = useNavigate();
+
   return (
-    <>
+    <div className="BD">
       <h2
+        className="bg-dark fixed-top"
         style={{
-          background: "#202020",
           width: "100%",
           height: "80px",
-          marginTop: "-60px",
-          marginBottom: "70px",
+          boxShadow: "0px 0px 5px 0px black",
           textAlign: "center",
           color: "white",
-          textShadow: "2px 2px slategrey",
+          textShadow: "3px 1px 2px slategrey",
           fontFamily: "fantasy",
           paddingBlockStart: "20px",
         }}
       >
         Big Boy Toyz Rentals
       </h2>
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="body">
         <div className="Contents">
           <div className="conCard">
@@ -39,13 +57,14 @@ export default function Main() {
               <div className="cont">
                 <button
                   className="btn btn-primary"
-                  onClick={() => navigate("/Login", { state: {} })}
+                  onClick={() => (window.location.href = "/Client_Car/Login")}
                 >
-                  User's Login
+                  User Login
                 </button>
               </div>
             </div>
           </div>
+
           <div className="conCard">
             <div class="card">
               <div className="div">
@@ -66,13 +85,13 @@ export default function Main() {
                     (window.location.href = "/Client_Car/LoginOwner")
                   }
                 >
-                  Owner's Login
+                  Owner Login
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

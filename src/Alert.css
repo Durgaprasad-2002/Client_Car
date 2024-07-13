@@ -1,0 +1,20 @@
+.AlertBody {
+  position: absolute;
+  z-index: 5;
+  background-color: white;
+  box-shadow: 0px 4px 9px -4px black;
+  border-radius: 5px;
+  right: 10px;
+  top: 100px;
+  min-height: 30px;
+  width: 200px;
+  color: black;
+  padding: 5px 10px 0px 10px;
+  transition: all 0.3s linear;
+}
+.AlertBody p {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  transition: all 0.3s linear;
+  font-weight: 600;
+}

@@ -9,54 +9,95 @@ import { Link } from "react-router-dom";
 
 function Login() {
   let navigate = useNavigate();
+  let database = [];
+  let [stat, setstat] = useState(0);
 
-  let [database, setdatabse] = useState([]);
+  // const UpdateStatus = async () => {
+  //   const response = await fetch(
+  //     "https://bbt-server-1lhz.onrender.com/updatestatus",
+  //     {
+  //       method: "GET",
+  //     }
+  //   );
+  // };
+  // useEffect(() => {
+  //   UpdateStatus();
+  // }, []);
+
   const getUser = async () => {
     const response = await fetch(
-      "https://clean-flip-flops-moth.cyclic.app/getlogcred",
+      "https://bbt-server-1lhz.onrender.com/getlogcred",
       {
         method: "GET",
       }
     );
-    const data = await response.json();
-    setdatabse(data);
-    console.log(database);
+    database = await response.json();
   };
-
-  useEffect(() => {
-    getUser();
-  }, []);
 
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loginType, setLoginType] = useState("");
 
   const errors = {
-    uname: "invalid username",
-    pass: "invalid password",
+    uname: "Invalid Usermail",
+    pass: "Invalid Password",
   };
+  let us = false;
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    let sp1 = document.getElementById("sp1");
+    let sp2 = document.getElementById("sp2");
+    sp1.style.display = "none";
+    sp2.style.display = "block";
     event.preventDefault();
 
     var { uname, pass } = document.forms[0];
 
-    if (database.length == 0) getUser();
-    const userData = database.filter((user) => {
-      if (user.user === uname.value && user.type == "user") {
-        if (user.password != pass.value) {
-          setErrorMessages({ name: "pass", message: errors.pass });
-        } else {
-          setIsSubmitted(true);
-          setLoginType(user.type);
-          localStorage.setItem("userType", user.type);
-          // window.location.href = "/Client_Car/dash";
-          navigate("/dash", { state: {} });
+    await getUser();
+    console.log(database);
+
+    for (let index = 0; index < database.length; index++) {
+      let user = database[index];
+      if (
+        user?.cred === null ||
+        user?.cred === undefined ||
+        user?.cred === ""
+      ) {
+        if (user.user === uname.value && user.type === "user") {
+          us = true;
+          if (user.password === pass.value) {
+            setIsSubmitted(true);
+            setLoginType(user.type);
+            localStorage.setItem("userMail", user.user);
+            navigate("/dash", { state: {} });
+          } else {
+            sp1.style.display = "block";
+            sp2.style.display = "none";
+            setErrorMessages({ name: "pass", message: errors.pass });
+          }
         }
       } else {
-        setErrorMessages({ name: "uname", message: errors.uname });
+        if (user?.cred?.user === uname.value && user?.cred?.type === "user") {
+          us = true;
+          if (user?.cred?.password === pass.value) {
+            setIsSubmitted(true);
+            setLoginType(user?.cred?.type);
+            localStorage.setItem("userMail", user?.cred?.user);
+            navigate("/dash", { state: {} });
+          } else {
+            sp1.style.display = "block";
+            sp2.style.display = "none";
+            setErrorMessages({ name: "pass", message: errors.pass });
+          }
+        }
       }
-    });
+    }
+    if (us == false) {
+      sp1.style.display = "block";
+      sp2.style.display = "none";
+      setErrorMessages({ name: "uname", message: errors.uname });
+    }
+    us = false;
   };
 
   const renderErrorMessage = (name) =>
@@ -67,40 +108,20 @@ function Login() {
   const renderForm = (
     <>
       <button
-        style={{
-          float: "right",
-          margin: "-50px 5px 0px 0px ",
-          outline: "2px solid white",
-        }}
-        className="btn btn-dark"
+        className="mainbtn"
         href="/Client_Car"
         onClick={() => navigate("/", { state: {} })}
       >
         Home Page
       </button>
+
       <div id="body">
         <div id="login">
           <form className="login" onSubmit={handleSubmit}>
-            <img
-              src="https://cdn.bigboytoyz.com/new-version/assets/images/bbt-mobile-logo1.png"
-              style={{
-                width: "180px",
-                height: "100px",
-                margin: "20px 0px 14px 62px",
-              }}
-            />
-            <div>
-              <h5
-                style={{
-                  fontWeight: "700",
-                  textAlign: "center",
-                  marginBottom: "30px",
-                  fontFamily: "serif",
-                }}
-              >
-                User's Login
-              </h5>
-            </div>
+            <h3 style={{ fontSize: "45px", fontFamily: "revert-layer" }}>
+              BBT
+            </h3>
+
             <div className="form-group">
               <label htmlFor="user" style={{ marginLeft: "3px" }}>
                 <FaMailBulk />
@@ -112,8 +133,9 @@ function Login() {
                 id="user"
                 name="uname"
               />
+              {renderErrorMessage("uname")}
             </div>
-            {renderErrorMessage("uname")}
+
             <div className="form-group">
               <label htmlFor="password" style={{ marginLeft: "3px" }}>
                 <FaLock />
@@ -125,10 +147,15 @@ function Login() {
                 id="password"
                 name="pass"
               />
+              {renderErrorMessage("pass")}
             </div>
-            {renderErrorMessage("pass")}
-            <button type="submit" className="btn btn-primary" value="Login">
-              Login
+
+            {/* <button type="submit" className="btn btn-primary " value="Login">
+              Login<span className="su"></span>
+            </button> */}
+            <button type="submit" className="loadbtn">
+              <article id="sp1">Login</article>
+              <article id="sp2"></article>
             </button>
 
             <br />
@@ -139,6 +166,7 @@ function Login() {
                 onClick={() => {
                   // window.location.href = "/Client_Car/signup";
                   navigate("/signup", { state: {} });
+                  setstat(stat + 1);
                 }}
                 style={{
                   color: "#4d4dff",
